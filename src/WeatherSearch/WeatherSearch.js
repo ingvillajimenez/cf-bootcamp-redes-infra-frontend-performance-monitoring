@@ -9,8 +9,14 @@ function WeatherSearch({
   onSuggestionClick,
   onSearch,
 }) {
+  const handleSearch = (e) => {
+    window.newrelic.addPageAction("search_clicked", { input });
+    // window.newrelic.noticeError('Esto es un error log de la consola de New Relic', { input });
+    onSearch(e);
+  };
+
   return (
-    <form className="weather-search" onSubmit={onSearch} autoComplete="off">
+    <form className="weather-search" onSubmit={handleSearch} autoComplete="off">
       <div style={{ position: "relative", width: "220px" }}>
         <input
           type="text"
