@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ActionButtons from "./ActionButtons/ActionButtons";
 import WeatherSearch from "./WeatherSearch/WeatherSearch";
 import WorldMap from "./WorldMap/WorldMap";
 import WeatherCard from "./WeatherCard/WeatherCard";
@@ -106,6 +107,7 @@ function App() {
 
   return (
     <div className="weather-app-container">
+      <ActionButtons />
       <h1 className="weather-title">Weather</h1>
       <WeatherSearch
         input={input}
